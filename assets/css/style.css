@@ -115,11 +115,6 @@ h4 {
     background-color: #4aaaa5;
 }
 
-/* aside styling */
-aside a:hover {
-    opacity: .7;
-}
-
 /* Grid Styling */
 .portfolio-grid-wrapper {
     padding: 30px;
