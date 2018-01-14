@@ -3,7 +3,9 @@ html {
 }
 
 body {
-    display: flex;
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms--display: flex;
     flex-direction: column;
     height: 100vh;
     background-image: url('../images/circles-and-roundabouts.png');
@@ -90,7 +92,7 @@ section {
 
 .box {
     position: relative;
-    height: 206px; /* specifying height is necessary to give the divs structure to hold the background images */
+    height: 206px;/* specifying height is necessary to give the divs structure to hold the background images */
 }
 
 .box h4 {
