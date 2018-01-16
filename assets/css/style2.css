@@ -3,37 +3,40 @@ html, body {
 }
 
 body {
-    /* -webkit-display: flex;
-    -moz-display: flex;
-    -ms-display: flex;
+    display: flex;
     flex-direction: column;
     height: 100vh;
-    
-    putting in the -webkit- etc. does not result in a sticky footer. Display:flex does, but then I have the disappearing background issue 
-    */
     background-image: url('../images/circles-and-roundabouts.png');
     color: #777777;
-    overflow: auto;
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-/* main styling */
+/* flex styling */
+.not-footer {
+    flex: 1 0 auto;
+}
+
+.flex-footer {
+    flex-shrink: 0;
+}
+
+/* header styling */
 header {
-    /* flex-shrink: 0; */
     border-bottom: 2px solid #cccccc;
     background-color: #fff;
 }
 
 header div {
     max-width: 960px;
+    min-width: 0;
+    min-height: 0;
     margin: auto;
 }
 
+/* main content styling */
 .main {
-    /* flex: 1 0 auto; */
     max-width: 960px;
     margin: auto;
-    padding-bottom: 87px;
 }
 
 section {
@@ -111,6 +114,7 @@ form button {
     font-size: 1em;
 }
 
+/* aside styling */
 aside {
     float: right;
     border: 2px solid #dddddd;
@@ -130,21 +134,16 @@ aside a:hover,
     opacity: .7;
 }
 
+/* footer styling */
 footer {
-    /* flex-shrink: 0; */
-    clear: both;
     background-color: #666666;
     color: #fff;
     border-top: 5px solid #4aaaa5;
     padding: 35px 0 35px 0;
     text-align: center;
     font-size: .75em;
-    margin-top: -87px;
 }
 
-.sticky-footer-wrapper {
-    min-height: 100%;
-}
 /* nav syling */
 nav a {
     display: inline-block;
