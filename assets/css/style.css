@@ -1,25 +1,35 @@
 html, body {
-    height: 100%;
+    min-height: 100%;
+    background-image: url('../images/circles-and-roundabouts.png');
+    /*putting the background image in the body selector creates problems with a form, such as in contact.html */
 }
 
 body {
-    /* -webkit-display: flex;
-    -moz-display: flex;
-    -ms-display: flex;
+    display: flex;
     flex-direction: column;
     height: 100vh;
-    
-    putting in the -webkit- etc. does not result in a sticky footer. Display:flex does, but then I have the disappearing background issue 
-    */
-    background-image: url('../images/circles-and-roundabouts.png');
     color: #777777;
     overflow: auto;
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.flex-footer {
+    flex-shrink: 0;
+    /* flex-shrink: 0 forces an element (in this case, the footer) to remain full size (in this case, height), where flex shrink: 1 would allow the browser to shrink it to some proportion of the available space */
+}
+
 /* main styling */
 header {
-    /* flex-shrink: 0; */
     border-bottom: 2px solid #cccccc;
     background-color: #fff;
 }
@@ -29,11 +39,9 @@ header div {
     margin: auto;
 }
 
-.main {
-    /* flex: 1 0 auto; */
+.content {
     max-width: 960px;
     margin: auto;
-    padding-bottom: 87px;
 }
 
 section {
@@ -44,7 +52,7 @@ section {
     margin: 30px 32px 30px 0;
 }
 
-/* index.html styling */
+/* index.html section styling */
 .about-me p {
     line-height: 2;
 }
@@ -59,7 +67,7 @@ section {
     padding-top: 8px;
 }
 
-/* portfolio.html styling */
+/* portfolio.html section styling */
 .portfolio-grid-wrapper {
     padding: 30px;
     display: grid;
@@ -83,7 +91,7 @@ section {
     padding: 15px 0;
 }
 
-/* contact.html styling */
+/* contact.html section styling */
 section form {
     padding: 30px;
 }
@@ -131,29 +139,25 @@ aside a:hover,
 }
 
 footer {
-    /* flex-shrink: 0; */
     clear: both;
     background-color: #666666;
     color: #fff;
     border-top: 5px solid #4aaaa5;
-    padding: 35px 0 35px 0;
     text-align: center;
     font-size: .75em;
-    margin-top: -87px;
 }
 
-.sticky-footer-wrapper {
-    min-height: 100%;
+footer p {
+    padding: 35px 0;
 }
+
 /* nav syling */
 nav a {
-    display: inline-block;
     text-decoration: none;
     color: #777777;
 }
 
 nav {
-    display: inline-block;
     float: right;
     padding-top: 30px;
 }
