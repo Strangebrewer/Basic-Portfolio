@@ -1,7 +1,7 @@
 html, body {
     min-height: 100%;
     background-image: url('../images/circles-and-roundabouts.png');
-    /*putting the background image in the body selector creates problems with a form, such as in contact.html */
+    /*putting the background image in the body selector causes the background image to not load properly in pages with form elements, such as in contact.html */
 }
 
 body {
@@ -28,20 +28,48 @@ body {
     /* flex-shrink: 0 forces an element (in this case, the footer) to remain full size (in this case, height), where flex shrink: 1 would allow the browser to shrink it to some proportion of the available space */
 }
 
-/* main styling */
+/* header styling */
 header {
+    flex-shrink: 0;
     border-bottom: 2px solid #cccccc;
     background-color: #fff;
+    width: 100%;
+    position: fixed;
 }
 
 header div {
-    max-width: 960px;
+    width: 960px;
     margin: auto;
 }
+
+/* nav bar styling */
+nav {
+    float: right;
+    padding-top: 30px;
+}
+
+nav a:hover {
+    color: #474747;
+}
+
+nav a {
+    text-decoration: none;
+    color: #777777;
+    border-right: 1px solid #e6e6e6;
+    padding: 0 16px 0 10px;
+}
+
+nav a:last-child {
+padding: 0 0 0 10px;
+border: none;
+}
+
+/* main content styling */
 
 .content {
     max-width: 960px;
     margin: auto;
+    padding-top: 80px;
 }
 
 section {
@@ -52,7 +80,25 @@ section {
     margin: 30px 32px 30px 0;
 }
 
-/* index.html section styling */
+aside {
+    float: right;
+    border: 2px solid #dddddd;
+    background-color: #fff;
+    width: 210px;
+    margin: 30px 0;
+    padding: 30px;
+}
+
+aside div {
+    padding: 25px 0 0 0;
+}
+
+aside a:hover,
+.box a:hover {
+    opacity: .7;
+}
+
+/* index.html content styling */
 .about-me p {
     line-height: 2;
 }
@@ -67,11 +113,11 @@ section {
     padding-top: 8px;
 }
 
-/* portfolio.html section styling */
+/* portfolio.html content styling */
 .portfolio-grid-wrapper {
     padding: 30px;
     display: grid;
-    grid-template-columns: 275px 275px;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 40px;
 }
 
@@ -85,13 +131,13 @@ section {
 
 .box h4 {
     position: absolute;
-    bottom: 10px;
+    bottom: 12px;
     width: 100%;
     text-align: center;
     padding: 15px 0;
 }
 
-/* contact.html section styling */
+/* contact.html content styling */
 section form {
     padding: 30px;
 }
@@ -119,25 +165,7 @@ form button {
     font-size: 1em;
 }
 
-aside {
-    float: right;
-    border: 2px solid #dddddd;
-    background-color: #fff;
-    width: 270px;
-    margin: 30px 0 30px 0;
-}
-
-aside div {
-    width: 202px;
-    margin: auto;
-    padding: 25px 0 25px 0;
-}
-
-aside a:hover,
-.box a:hover {
-    opacity: .7;
-}
-
+/* footer styling */
 footer {
     clear: both;
     background-color: #666666;
@@ -149,31 +177,6 @@ footer {
 
 footer p {
     padding: 35px 0;
-}
-
-/* nav syling */
-nav a {
-    text-decoration: none;
-    color: #777777;
-}
-
-nav {
-    float: right;
-    padding-top: 30px;
-}
-
-nav a:hover {
-    color: #474747;
-}
-
-nav a {
-    border-right: 1px solid #e6e6e6;
-    padding: 0 16px 0 10px;
-}
-
-nav a:last-child {
-padding: 0 0 0 10px;
-border: none;
 }
 
 /* heading styling */
@@ -203,8 +206,7 @@ h3 {
     font-size: 1.5em;
     font-weight: bold;
     color: #4aaaa5;
-    padding: 25px 0 20px 0;
-    margin: 0 30px 0 30px;
+    padding: 0 0 20px 0;
     border-bottom: 2px solid #e6e6e6;
 }
 
