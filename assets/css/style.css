@@ -67,8 +67,7 @@ border: none;
 /* main content styling */
 .content {
     width: 960px;
-    margin: auto;
-    margin-top: 110px;
+    margin: 110px auto 30px auto;
 }
 
 section {
@@ -120,6 +119,7 @@ aside a:hover,
 #about-me img {
     float: left;
     margin: 8px 20px 0 0;
+    width: 270px;
 }
 
 #about-me h2 {
