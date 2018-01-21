@@ -1,7 +1,10 @@
-html, body {
-    min-height: 100%;
+html {
     background-image: url('../images/circles-and-roundabouts.png');
     /*putting the background image in the body selector causes the background image to not load properly in pages with form elements, such as in contact.html */
+}
+
+html, body {
+    min-height: 100%;
 }
 
 body {
@@ -9,7 +12,6 @@ body {
     flex-direction: column;
     height: 100vh;
     color: #777777;
-    overflow: auto;
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
@@ -17,15 +19,6 @@ body {
     content: "";
     display: block;
     clear: both;
-}
-
-.content {
-    flex: 1 0 auto;
-}
-
-.flex-footer {
-    flex-shrink: 0;
-    /* flex-shrink: 0 forces an element (in this case, the footer) to remain full size (in this case, height), where flex shrink: 1 would allow the browser to shrink it to some proportion of the available space */
 }
 
 /* header styling */
@@ -66,6 +59,7 @@ border: none;
 
 /* main content styling */
 .content {
+    flex: 1 0 auto;
     width: 960px;
     margin: 110px auto 30px auto;
 }
@@ -177,6 +171,8 @@ form button {
 
 /* footer styling */
 footer {
+    flex-shrink: 0;
+    /* flex-shrink: 0 forces an element (in this case, the footer) to remain full size (in this case, height), where flex shrink: 1 (or 2, or .5 or 4 or whatever) would allow the browser to shrink it to some proportion of the available space */
     clear: both;
     background-color: #666666;
     color: #fff;
