@@ -78,6 +78,10 @@ aside {
     width: 270px;
 }
 
+aside a {
+    text-decoration: none;
+}
+
 aside div {
     padding-top: 22px;
 }
