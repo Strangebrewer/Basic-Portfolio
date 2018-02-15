@@ -3,10 +3,6 @@ html {
     /*putting the background image in the body selector causes the background image to not load properly in pages with form elements, such as in contact.html */
 }
 
-html, body {
-    min-height: 100%;
-}
-
 body {
     display: flex;
     flex-direction: column;
